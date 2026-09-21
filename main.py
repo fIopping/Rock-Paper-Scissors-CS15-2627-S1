@@ -3,19 +3,22 @@ from ast import While
 
 
 def main():
+    player_choice = None
+    robot_choice = None
     player_points = 0
     robot_points = 0
     player_win = 0
     robot_win = 0
-    Rock = None
-    Paper = None
-    Scissors = None
-    Rock_win = Rock > Scissors
-    Paper_win = Paper > Rock
-    Scissors_win = Scissors > Paper
-    Rock_lose = Rock < Paper
-    Paper_lose = Paper < Scissors
-    Scissors_lose = Scissors < Rock
+    Rock = "Rock"
+    Paper = "Paper"
+    Scissors = "Scissors"
+    Rock_win = f"{Rock} > {Scissors}"
+    Paper_win = f"{Paper} > {Rock}"
+    Scissors_win = f"{Scissors} > {Paper}"
+
+    Rock_lose = f"{Rock} < {Paper}"
+    Paper_lose = f"{Paper} < {Scissors}"
+    Scissors_lose = f"{Scissors} < {Rock}"
 
 
     word_choice = ("Rock", "Paper", "Scissor")
@@ -35,7 +38,16 @@ def main():
                 
             else:
                 break
+
+        print(f"\nYou chose: {guess}")
+        print(f"Bot chose: {game}\n")
             
+        if guess == game:
+            print("Its a tie!\n")
+
+        
+
+
         if game != guess:
             player_points -= 1
             robot_points += 1
@@ -61,6 +73,8 @@ def main():
 
         if player_win == 3:
             print("Player wins!\n")
+
+
 
 
             
